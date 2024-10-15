@@ -15,6 +15,10 @@ public class ActivityTwo {
         System.out.println("El string es : " + stringVal);
         System.out.println("El long es : " + longVal);
         System.out.println("El float es : " + floatVal);
+
+        int age = 22;
+        String name = "Carlos A Cruz U";
+        System.out.println("Mi nombre es " + name + ", y tengo " + age + " años");
     }
 
     
