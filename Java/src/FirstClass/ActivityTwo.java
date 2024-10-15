@@ -1,5 +1,23 @@
 package FirstClass;
 
+/*
+ * The {@code ActivityTwo} class contain method related to the activity:
+ * 1. Declara una variable por cada uno de los siguientes tipos de dato, 
+ * asignando un valor (nombre y valor de tu preferencia):
+ * 
+ *  boolean
+ *  char
+ *  String
+ *  Int
+ *  long
+ *  float
+ * 
+ * 2. Imprime en consola el contenido de al menos tres de las variables que declaraste en el paso anterior.
+ * 
+ * 3. Declara una nueva variable para almacenar tu edad y otra para almacenar tu nombre e imprimir en 
+ *    pantalla un texto que diga “Mi nombre es [nombre], y tengo [edad] años”.
+ */
+
 public class ActivityTwo {
     
     public static void dataType() {
