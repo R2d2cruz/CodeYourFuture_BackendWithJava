@@ -34,13 +34,17 @@ public class Main {
 
     public static int inputInt(int maxValue, String message, String errorMessage) {
         int val = 0;
-        boolean isNotvalid;
+        boolean isNotvalid = false;
         do {
             System.out.print(message);
-            val = scanner.nextInt();
-            isNotvalid = val < 0 || val > maxValue;
-            if (isNotvalid) {
-                System.out.println(errorMessage);
+            try {
+                val = scanner.nextInt();
+                isNotvalid = val < 0 || val > maxValue;
+                if (isNotvalid) {
+                    System.out.println(errorMessage);
+                }
+            } catch (Exception e) {
+                System.out.println("Entrada no valida, intente de nuevo");
             }
         } while (isNotvalid);
         return val;
