@@ -13,6 +13,7 @@ public class Main {
                     inLoop = false;
                 }
                 case 1 -> {
+                    firstClass();
                 }
                 default -> throw new AssertionError();
             }
@@ -56,5 +57,25 @@ public class Main {
         scanner.nextLine();
     }
 
+    public static void firstClass() {
+        clearTerminal();
+        System.out.println("Que actividad quiere ejecutar: ");
+        System.out.println("1. Actividad uno");
+        System.out.println("2. Actividad dos");
+        System.out.println("3. Actividad complementaria");
+        System.out.println("0. Ninguna.");
+        int option = inputInt(3, "Ingrese que actividad desea: ");
+        if (option == 0) {
+            System.out.println("Entendido, regresando al menu...");
+        } else {
+            switch (option) {
+                case 1 -> FirstClass.ActivityOne.printHelloWorld();
+                case 2 -> FirstClass.ActivityTwo.dataType();
+                case 3 -> FirstClass.Complement.complementOuts();
+                default -> throw new AssertionError();
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+            waitEnter();
+        }
     }
 }
