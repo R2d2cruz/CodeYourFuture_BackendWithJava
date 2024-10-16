@@ -14,9 +14,9 @@ import java.util.Scanner;
 
 public class ActivityOne {
     public static void scannerFunction(Scanner scanner){
-        System.out.print("Ingrese su nombre: ");
-        String name = scanner.nextLine();
-        System.out.print("Ingrese su edad: ");
+        System.out.println("Ingrese su nombre: ");
+        String name = scanner.next();
+        System.out.println("Ingrese su edad: ");
         int age = scanner.nextInt();
         System.out.println("Su nombres es " + name + " y su edad es " + age);
     }
