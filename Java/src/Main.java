@@ -8,12 +8,16 @@ public class Main {
         do {
             menu();
             switch (inputInt(1, "Ingrese la opcion que prefiere: ")) {
+            switch (inputInt(10, "Ingrese la opcion que prefiere: ")) {
                 case 0 -> {
                     System.out.println("Muchas gracias, que tenga buen dia.");
                     inLoop = false;
                 }
                 case 1 -> {
                     firstClass();
+                }
+                case 10 -> {
+                    arrayClass();
                 }
                 default -> throw new AssertionError();
             }
@@ -25,6 +29,7 @@ public class Main {
         clearTerminal();
         System.out.println("Menu de clases, seleccione una: ");
         System.out.println("1. Clase Uno");
+        System.out.println("10. Clase diez (arreglos)");
         System.out.println("0. Salir");
     }
 
@@ -76,6 +81,22 @@ public class Main {
                 case 1 -> FirstClass.ActivityOne.printHelloWorld();
                 case 2 -> FirstClass.ActivityTwo.dataType();
                 case 3 -> FirstClass.Complement.complementOuts();
+                default -> throw new AssertionError();
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+            waitEnter();
+        }
+    }
+
+    public static void arrayClass() {
+        clearTerminal();
+        System.out.println("Que actividad quiere ejecutar: ");
+        System.out.println("0. Ninguna.");
+        int option = inputInt(3, "Ingrese que actividad desea: ");
+        if (option == 0) {
+            System.out.println("Entendido, regresando al menu...");
+        } else {
+            switch (option) {
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
