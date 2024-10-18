@@ -7,7 +7,6 @@ public class Main {
         boolean inLoop = true;
         do {
             menu();
-            switch (inputInt(1, "Ingrese la opcion que prefiere: ")) {
             switch (inputInt(10, "Ingrese la opcion que prefiere: ")) {
                 case 0 -> {
                     System.out.println("Muchas gracias, que tenga buen dia.");
@@ -91,12 +90,14 @@ public class Main {
     public static void arrayClass() {
         clearTerminal();
         System.out.println("Que actividad quiere ejecutar: ");
+        System.out.println("1. Actividad uno");
         System.out.println("0. Ninguna.");
         int option = inputInt(3, "Ingrese que actividad desea: ");
         if (option == 0) {
             System.out.println("Entendido, regresando al menu...");
         } else {
             switch (option) {
+                case 1 -> ArrayClass.ActivityOne.printSumList(scanner);
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
