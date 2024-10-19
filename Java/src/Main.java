@@ -15,6 +15,9 @@ public class Main {
                 case 1 -> {
                     firstClass();
                 }
+                case 3 -> {
+                    thirdClass();
+                }
                 default -> throw new AssertionError();
             }
         } while (inLoop);
@@ -76,6 +79,24 @@ public class Main {
                 case 1 -> FirstClass.ActivityOne.printHelloWorld();
                 case 2 -> FirstClass.ActivityTwo.dataType();
                 case 3 -> FirstClass.Complement.complementOuts();
+                default -> throw new AssertionError();
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+            waitEnter();
+        }
+    }
+
+    public static void thirdClass() {
+        clearTerminal();
+        System.out.println("Que actividad quiere ejecutar: ");
+        System.out.println("1. Actividad uno");
+        System.out.println("2. Actividad dos");
+        System.out.println("0. Ninguna.");
+        int option = inputInt(2, "Ingrese que actividad desea: ");
+        if (option == 0) {
+            System.out.println("Entendido, regresando al menu...");
+        } else {
+            switch (option) {
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
