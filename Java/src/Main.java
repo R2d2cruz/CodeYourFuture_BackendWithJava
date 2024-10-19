@@ -97,6 +97,7 @@ public class Main {
             System.out.println("Entendido, regresando al menu...");
         } else {
             switch (option) {
+                case 1 -> ThirdActivity_IntegrativeActivity.ActivityOne.evenOrOdd(scanner);
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
