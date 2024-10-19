@@ -95,6 +95,7 @@ public class Main {
         System.out.println("3. Actividad tres");
         System.out.println("4. Actividad cuatro");
         System.out.println("5. Actividad cinco");
+        System.out.println("8. Actividad complementaria tres");
         System.out.println("0. Ninguna.");
         int option = inputInt(3, "Ingrese que actividad desea: ");
         if (option == 0) {
