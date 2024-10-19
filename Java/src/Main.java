@@ -107,6 +107,7 @@ public class Main {
                 case 3 -> ArrayClass.ActivityThree.maxValue(scanner);
                 case 4 -> ArrayClass.ActivityFour.arrayInts(scanner);
                 case 5 -> ArrayClass.ActivityFive.copingInArray(scanner);
+                case 8 -> ArrayClass.ComplementThree.alfabetic(scanner);
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
