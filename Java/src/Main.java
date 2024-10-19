@@ -91,6 +91,7 @@ public class Main {
         clearTerminal();
         System.out.println("Que actividad quiere ejecutar: ");
         System.out.println("1. Actividad uno");
+        System.out.println("2. Actividad dos");
         System.out.println("0. Ninguna.");
         int option = inputInt(3, "Ingrese que actividad desea: ");
         if (option == 0) {
@@ -98,6 +99,7 @@ public class Main {
         } else {
             switch (option) {
                 case 1 -> ArrayClass.ActivityOne.printSumList(scanner);
+                case 2 -> ArrayClass.ActivityTwo.average(scanner);
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
