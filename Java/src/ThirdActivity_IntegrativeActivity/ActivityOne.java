@@ -12,11 +12,8 @@ import java.util.Scanner;
 public class ActivityOne {
     public static void evenOrOdd(Scanner scanner){
         int number = inputInt("Ingrese un numero: " ,scanner);
-        if (number % 2 == 0){
-            System.out.println("El numero" + number + " es par.");
-        } else {
-            System.out.println("El numero" + number + " es impar.");
-        }
+        String numberType = number % 2 == 0 ? "par" : "impar";
+        System.out.println("El numero" + number + " es " + numberType);
     }
 
     public static int inputInt(String message, Scanner scanner) {
