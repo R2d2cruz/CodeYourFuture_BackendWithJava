@@ -100,6 +100,7 @@ public class Main {
             System.out.println("Entendido, regresando al menu...");
         } else {
             switch (option) {
+                case 1 -> SecondClass.ActivityOne.scannerFunction(scanner);
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
