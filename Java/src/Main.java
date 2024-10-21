@@ -103,6 +103,7 @@ public class Main {
                 case 1 -> SecondClass.ActivityOne.scannerFunction(scanner);
                 case 2 -> SecondClass.ActivityTwo.calculator(scanner);
                 case 3 -> SecondClass.ActivityThree.comparations(scanner);
+                case 4 -> SecondClass.ComplementOne.AgeVerification(scanner);
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
