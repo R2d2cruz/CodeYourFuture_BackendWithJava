@@ -101,6 +101,7 @@ public class Main {
         } else {
             switch (option) {
                 case 1 -> SecondClass.ActivityOne.scannerFunction(scanner);
+                case 2 -> SecondClass.ActivityTwo.calculator(scanner);
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
