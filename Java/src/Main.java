@@ -92,6 +92,7 @@ public class Main {
         System.out.println("Que actividad quiere ejecutar: ");
         System.out.println("1. Actividad uno");
         System.out.println("2. Actividad dos");
+        System.out.println("3. Actividad tres");
         System.out.println("0. Ninguna.");
         int option = inputInt(9, "Ingrese que actividad desea: ");
         if (option == 0) {
@@ -100,6 +101,7 @@ public class Main {
             switch (option) {
                 case 1 -> ClassEleven.ActivityOne.printArrayLn();
                 case 2 -> ClassEleven.ActivityTwo.minVal();
+                case 3 -> ClassEleven.ActivityThree.printInv();
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
