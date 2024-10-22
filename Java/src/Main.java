@@ -90,12 +90,14 @@ public class Main {
     public static void elevenClass() {
         clearTerminal();
         System.out.println("Que actividad quiere ejecutar: ");
+        System.out.println("1. Actividad uno");
         System.out.println("0. Ninguna.");
         int option = inputInt(9, "Ingrese que actividad desea: ");
         if (option == 0) {
             System.out.println("Entendido, regresando al menu...");
         } else {
             switch (option) {
+                case 1 -> ClassEleven.ActivityOne.printArrayLn();
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
