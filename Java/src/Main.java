@@ -97,6 +97,7 @@ public class Main {
         System.out.println("5. Actividad cinco");
         System.out.println("6. Actividad seis");
         System.out.println("7. Actividad complementaria uno");
+        System.out.println("8. Actividad complementaria dos");
         System.out.println("0. Ninguna.");
         int option = inputInt(9, "Ingrese que actividad desea: ");
         if (option == 0) {
@@ -110,6 +111,7 @@ public class Main {
                 case 5 -> ClassEleven.ActivityFive.floatAverage();
                 case 6 -> ClassEleven.ActivitySix.concatenateStrings(scanner);
                 case 7 -> ClassEleven.ComplementOne.invertArray();
+                case 8 -> ClassEleven.ComplementTwo.sumArray();
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
