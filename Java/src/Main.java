@@ -94,6 +94,7 @@ public class Main {
         System.out.println("2. Actividad dos");
         System.out.println("3. Actividad tres");
         System.out.println("4. Actividad cuatro");
+        System.out.println("5. Actividad cinco");
         System.out.println("0. Ninguna.");
         int option = inputInt(9, "Ingrese que actividad desea: ");
         if (option == 0) {
@@ -104,6 +105,7 @@ public class Main {
                 case 2 -> ClassEleven.ActivityTwo.minVal();
                 case 3 -> ClassEleven.ActivityThree.printInv();
                 case 4 -> ClassEleven.ActivityFour.pairCounting();
+                case 5 -> ClassEleven.ActivityFive.floatAverage();
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
