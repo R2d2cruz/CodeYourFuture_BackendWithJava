@@ -15,6 +15,8 @@ public class Main {
                 case 1 -> {
                     firstClass();
                 }
+                case 2 -> {
+                    secondClass();
                 case 11 -> {
                     elevenClass();
                 }
@@ -86,6 +88,33 @@ public class Main {
             waitEnter();
         }
     }
+
+    public static void secondClass() {
+        clearTerminal();
+        System.out.println("Que actividad quiere ejecutar: ");
+        System.out.println("1. Actividad uno");
+        System.out.println("2. Actividad dos");
+        System.out.println("3. Actividad tres");
+        System.out.println("4. Actividad complementaria uno");
+        System.out.println("5. Actividad complementaria dos");
+        System.out.println("0. Ninguna.");
+        int option = inputInt(3, "Ingrese que actividad desea: ");
+        if (option == 0) {
+            System.out.println("Entendido, regresando al menu...");
+        } else {
+            switch (option) {
+                case 1 -> SecondClass.ActivityOne.scannerFunction(scanner);
+                case 2 -> SecondClass.ActivityTwo.calculator(scanner);
+                case 3 -> SecondClass.ActivityThree.comparations(scanner);
+                case 4 -> SecondClass.ComplementOne.AgeVerification(scanner);
+                case 5 -> SecondClass.ComplementTwo.rectangle(scanner);
+                default -> throw new AssertionError();
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+            waitEnter();
+        }
+    }
+                
 
     public static void elevenClass() {
         clearTerminal();
