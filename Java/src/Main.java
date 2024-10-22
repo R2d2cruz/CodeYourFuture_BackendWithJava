@@ -28,6 +28,7 @@ public class Main {
         clearTerminal();
         System.out.println("Menu de clases, seleccione una: ");
         System.out.println("1. Clase Uno");
+        System.out.println("11. Clase Once");
         System.out.println("0. Salir");
     }
 
