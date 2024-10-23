@@ -96,6 +96,7 @@ public class Main {
         System.out.println("4. Actividad cuatro");
         System.out.println("5. Actividad cinco");
         System.out.println("6. Actividad complementaria uno");
+        System.out.println("7. Actividad complementaria dos");
         System.out.println("8. Actividad complementaria tres");
         System.out.println("0. Ninguna.");
         int option = inputInt(3, "Ingrese que actividad desea: ");
@@ -109,6 +110,7 @@ public class Main {
                 case 4 -> ArrayClass.ActivityFour.arrayInts(scanner);
                 case 5 -> ArrayClass.ActivityFive.copingInArray(scanner);
                 case 6 -> ArrayClass.ComplementOne.pairElements();
+                case 7 -> ArrayClass.ComplementTwo.pairIndex();
                 case 8 -> ArrayClass.ComplementThree.alfabetic(scanner);
                 default -> throw new AssertionError();
             }
