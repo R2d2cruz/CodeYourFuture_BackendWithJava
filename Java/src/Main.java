@@ -99,7 +99,7 @@ public class Main {
         System.out.println("7. Actividad complementaria dos");
         System.out.println("8. Actividad complementaria tres");
         System.out.println("0. Ninguna.");
-        int option = inputInt(3, "Ingrese que actividad desea: ");
+        int option = inputInt(8, "Ingrese que actividad desea: ");
         if (option == 0) {
             System.out.println("Entendido, regresando al menu...");
         } else {
