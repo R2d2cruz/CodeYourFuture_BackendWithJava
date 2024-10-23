@@ -15,8 +15,14 @@ public class Main {
                 case 1 -> {
                     firstClass();
                 }
+                case 2 -> {
+                    secondClass();
+                }
                 case 10 -> {
                     arrayClass();
+                }
+                case 11 -> {
+                    elevenClass();
                 }
                 default -> throw new AssertionError();
             }
@@ -28,7 +34,9 @@ public class Main {
         clearTerminal();
         System.out.println("Menu de clases, seleccione una: ");
         System.out.println("1. Clase Uno");
-        System.out.println("10. Clase diez (arreglos)");
+        System.out.println("2. Clase Dos");
+        System.out.println("10. Clase diez");
+        System.out.println("11. Clase Once");
         System.out.println("0. Salir");
     }
 
@@ -87,6 +95,33 @@ public class Main {
         }
     }
 
+    public static void secondClass() {
+        clearTerminal();
+        System.out.println("Que actividad quiere ejecutar: ");
+        System.out.println("1. Actividad uno");
+        System.out.println("2. Actividad dos");
+        System.out.println("3. Actividad tres");
+        System.out.println("4. Actividad complementaria uno");
+        System.out.println("5. Actividad complementaria dos");
+        System.out.println("0. Ninguna.");
+        int option = inputInt(3, "Ingrese que actividad desea: ");
+        if (option == 0) {
+            System.out.println("Entendido, regresando al menu...");
+        } else {
+            switch (option) {
+                case 1 -> SecondClass.ActivityOne.scannerFunction(scanner);
+                case 2 -> SecondClass.ActivityTwo.calculator(scanner);
+                case 3 -> SecondClass.ActivityThree.comparations(scanner);
+                case 4 -> SecondClass.ComplementOne.AgeVerification(scanner);
+                case 5 -> SecondClass.ComplementTwo.rectangle(scanner);
+                default -> throw new AssertionError();
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+            waitEnter();
+        }
+    }
+  
+  
     public static void arrayClass() {
         clearTerminal();
         System.out.println("Que actividad quiere ejecutar: ");
@@ -112,6 +147,41 @@ public class Main {
                 case 6 -> ArrayClass.ComplementOne.pairElements();
                 case 7 -> ArrayClass.ComplementTwo.pairIndex();
                 case 8 -> ArrayClass.ComplementThree.alfabetic(scanner);
+                default -> throw new AssertionError();
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+            waitEnter();
+        }
+    }
+                
+
+    public static void elevenClass() {
+        clearTerminal();
+        System.out.println("Que actividad quiere ejecutar: ");
+        System.out.println("1. Actividad uno");
+        System.out.println("2. Actividad dos");
+        System.out.println("3. Actividad tres");
+        System.out.println("4. Actividad cuatro");
+        System.out.println("5. Actividad cinco");
+        System.out.println("6. Actividad seis");
+        System.out.println("7. Actividad complementaria uno");
+        System.out.println("8. Actividad complementaria dos");
+        System.out.println("9. Actividad complementaria tres");
+        System.out.println("0. Ninguna.");
+        int option = inputInt(9, "Ingrese que actividad desea: ");
+        if (option == 0) {
+            System.out.println("Entendido, regresando al menu...");
+        } else {
+            switch (option) {
+                case 1 -> ClassEleven.ActivityOne.printArrayLn();
+                case 2 -> ClassEleven.ActivityTwo.minVal();
+                case 3 -> ClassEleven.ActivityThree.printInv();
+                case 4 -> ClassEleven.ActivityFour.pairCounting();
+                case 5 -> ClassEleven.ActivityFive.floatAverage();
+                case 6 -> ClassEleven.ActivitySix.concatenateStrings(scanner);
+                case 7 -> ClassEleven.ComplementOne.invertArray();
+                case 8 -> ClassEleven.ComplementTwo.sumArray();
+                case 9 -> ClassEleven.ComplementThree.searchLetter(scanner);
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
