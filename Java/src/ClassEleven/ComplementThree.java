@@ -1,6 +1,6 @@
 package ClassEleven;
 
-import java.util.Scanner;
+import Utils.TerminalFunctions;
 
 /*
  * The {@code ComplementThree} class contain method related to the activity:
@@ -12,11 +12,9 @@ import java.util.Scanner;
  */
 
 public class ComplementThree {
-    public static void searchLetter(Scanner scanner) {
-        System.out.println("Ingrese una frase: ");
-        String sentence = scanner.next();
-        System.out.print("Ingrese el caracter que busca: ");
-        char letter = (scanner.next()).toCharArray()[0];
+    public static void searchLetter() {
+        String sentence = TerminalFunctions.inputString("Ingrese una frase: ");
+        char letter = (TerminalFunctions.inputString("Ingrese el caracter que busca: ")).toCharArray()[0];
         char[] letters = sentence.toCharArray();
         int sum = 0;
         for (char c : letters) {

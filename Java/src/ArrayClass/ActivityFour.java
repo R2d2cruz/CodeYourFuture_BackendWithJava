@@ -1,6 +1,6 @@
 package ArrayClass;
 
-import java.util.Scanner;
+import Utils.TerminalFunctions;
 
 /*
  * The {@code ComplementThree} class contain method related to the activity:
@@ -12,30 +12,13 @@ import java.util.Scanner;
  */
 
 public class ActivityFour {
-    public static void arrayInts(Scanner scanner){
+    public static void arrayInts(){
         int[] arrayInt = new int[3];
-        arrayInt[0] = inputInt("Ingrese primer numero: ", scanner);
-        arrayInt[1] = inputInt("Ingrese segundo numero: ", scanner);
-        arrayInt[2] = inputInt("Ingrese tercer numero: ", scanner);
+        arrayInt[0] = TerminalFunctions.inputInt("Ingrese primer numero: ");
+        arrayInt[1] = TerminalFunctions.inputInt("Ingrese segundo numero: ");
+        arrayInt[2] = TerminalFunctions.inputInt("Ingrese tercer numero: ");
 
         System.out.println("[" + arrayInt[0] + ", " + arrayInt[1] + ", " + arrayInt[2] + "]");
         
-    }
-    
-
-    public static int inputInt(String message, Scanner scanner) {
-        int val = 0;
-        boolean isNotvalid;
-        do {
-            System.out.print(message);
-            try {
-                val = scanner.nextInt();
-                isNotvalid = false;
-            } catch (Exception e) {
-                System.out.println("Entrada no valida, intente de nuevo");
-                isNotvalid = true;
-            }
-        } while (isNotvalid);
-        return val;
     }
 }

@@ -1,6 +1,6 @@
 package ArrayClass;
 
-import java.util.Scanner;
+import Utils.TerminalFunctions;
 
 /*
  * The {@code ComplementThree} class contain method related to the activity:
@@ -10,20 +10,16 @@ import java.util.Scanner;
  */
 
 public class ComplementThree {
-    public static void alfabetic(Scanner scanner){
+    public static void alfabetic(){
         String[] names = new String[4];
         
-        System.out.println("Ingrese su nombre: ");
-        names[0] = scanner.next();
+        names[0] = TerminalFunctions.inputString("Ingrese su nombre: ");
         
-        System.out.println("Ingrese su nombre: ");
-        names[1] = scanner.next();
-        
-        System.out.println("Ingrese su nombre: ");
-        names[2] = scanner.next();
-        
-        System.out.println("Ingrese su nombre: ");
-        names[3] = scanner.next();
+        names[1] = TerminalFunctions.inputString("Ingrese su nombre: ");
+
+        names[2] = TerminalFunctions.inputString("Ingrese su nombre: ");
+
+        names[3] = TerminalFunctions.inputString("Ingrese su nombre: ");
 
         String aux = names[0];
 

@@ -1,6 +1,6 @@
 package ArrayClass;
 
-import java.util.Scanner;
+import Utils.TerminalFunctions;
 
 /*
  * The {@code ActivityThree} class contain method related to the activity:
@@ -11,15 +11,15 @@ import java.util.Scanner;
  */
 
 public class ActivityThree {
-    public static void maxValue(Scanner scanner) {
+    public static void maxValue() {
         int[] nums = new int[5];
         int max;
 
-        nums[0] = inputInt("Ingrese numero 1: ", scanner);
-        nums[1] = inputInt("Ingrese numero 2: ", scanner);
-        nums[2] = inputInt("Ingrese numero 3: ", scanner);
-        nums[3] = inputInt("Ingrese numero 4: ", scanner);
-        nums[4] = inputInt("Ingrese numero 5: ", scanner);
+        nums[0] = TerminalFunctions.inputInt("Ingrese numero 1: ");
+        nums[1] = TerminalFunctions.inputInt("Ingrese numero 2: ");
+        nums[2] = TerminalFunctions.inputInt("Ingrese numero 3: ");
+        nums[3] = TerminalFunctions.inputInt("Ingrese numero 4: ");
+        nums[4] = TerminalFunctions.inputInt("Ingrese numero 5: ");
 
         max = nums[0] >= nums[1] ? nums[0] : nums[1];
         max = max >= nums[2] ? max : nums[2];
@@ -27,21 +27,5 @@ public class ActivityThree {
         max = max >= nums[4] ? max : nums[4];
 
         System.out.println("El valor maximo es: " + max);
-    }
-
-    public static int inputInt(String message, Scanner scanner) {
-        int val = 0;
-        boolean isNotvalid;
-        do {
-            System.out.print(message);
-            try {
-                val = scanner.nextInt();
-                isNotvalid = false;
-            } catch (Exception e) {
-                System.out.println("Entrada no valida, intente de nuevo");
-                isNotvalid = true;
-            }
-        } while (isNotvalid);
-        return val;
     }
 }

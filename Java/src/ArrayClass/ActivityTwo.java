@@ -1,6 +1,6 @@
 package ArrayClass;
 
-import java.util.Scanner;
+import Utils.TerminalFunctions;
 
 /*
  * The {@code ActivityTwo} class contain method related to the activity:
@@ -12,29 +12,13 @@ import java.util.Scanner;
  */
 
 public class ActivityTwo {
-    public static void average(Scanner scanner) {
+    public static void average() {
         int[] nums = new int[4];
-        nums[0] = inputInt("Ingrese numero 1: ", scanner);
-        nums[1] = inputInt("Ingrese numero 2: ", scanner);
-        nums[2] = inputInt("Ingrese numero 3: ", scanner);
-        nums[3] = inputInt("Ingrese numero 4: ", scanner);
+        nums[0] = TerminalFunctions.inputInt("Ingrese numero 1: ");
+        nums[1] = TerminalFunctions.inputInt("Ingrese numero 2: ");
+        nums[2] = TerminalFunctions.inputInt("Ingrese numero 3: ");
+        nums[3] = TerminalFunctions.inputInt("Ingrese numero 4: ");
         double prom = (nums[0] + nums[1] + nums[2] + nums[3]) / 4;
         System.out.println("El promedio es " + prom);
-    }
-
-    public static int inputInt(String message, Scanner scanner) {
-        int val = 0;
-        boolean isNotvalid;
-        do {
-            System.out.print(message);
-            try {
-                val = scanner.nextInt();
-                isNotvalid = false;
-            } catch (Exception e) {
-                System.out.println("Entrada no valida, intente de nuevo");
-                isNotvalid = true;
-            }
-        } while (isNotvalid);
-        return val;
     }
 }

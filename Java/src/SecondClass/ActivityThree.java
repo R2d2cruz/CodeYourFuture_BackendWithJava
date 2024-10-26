@@ -1,6 +1,6 @@
 package SecondClass;
 
-import java.util.Scanner;
+import Utils.TerminalFunctions;
 
 /*
  * The {@code ActivityThree} class contain method related to the activity:
@@ -16,18 +16,14 @@ import java.util.Scanner;
  */
 
 public class ActivityThree {
-    public static void comparations(Scanner scanner){
-        System.out.print("Ingrese un numero entero: ");
-        int a = scanner.nextInt();
-        System.out.print("Ingrese otro numero entero: ");
-        int b = scanner.nextInt();
+    public static void comparations(){
+        int a = TerminalFunctions.inputInt("Ingrese un numero entero: ");
+        int b = TerminalFunctions.inputInt("Ingrese otro numero entero: ");
         System.out.println("El numero " + a + " es mayor a " + b + "? = " + (a > b));
         System.out.println("El numero " + a + " es distinto a " + b + "? = " + (a != b));
         System.out.println("El numero " + a + " es divisible por 2? = " + (a % 2 == 0));
-        System.out.print("Ingrese otro numero entero: ");
-        int c = scanner.nextInt();
-        System.out.print("Ingrese otro numero entero: ");
-        int d = scanner.nextInt();
+        int c = TerminalFunctions.inputInt("Ingrese otro numero entero: ");
+        int d = TerminalFunctions.inputInt("Ingrese otro numero entero: ");
         System.out.println("El numero " + a + " es mayor a" + b + "y el numero " + c + " es mayor al numero " + d + "? " + (a > b && c > d));
         System.out.println("El numero " + a + " es mayor a" + b + "y el numero " + c + " es mayor al numero " + d + "? " + (a > b || c > d));
 
