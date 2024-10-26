@@ -1,7 +1,6 @@
 package ArrayClass;
 
 import Utils.TerminalFunctions;
-import java.util.Scanner;
 
 /*
  * The {@code ActivityOne} class contain method related to the activity:
