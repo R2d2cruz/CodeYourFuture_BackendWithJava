@@ -27,7 +27,7 @@ public class Main {
                 case 11 -> {
                     elevenClass();
                 }
-                default -> throw new AssertionError();
+                default -> throw new AssertionError("How did we get here?");
             }
         } while (inLoop);
         TerminalFunctions.close();
@@ -75,7 +75,7 @@ public class Main {
                 case 1 -> FirstClass.ActivityOne.printHelloWorld();
                 case 2 -> FirstClass.ActivityTwo.dataType();
                 case 3 -> FirstClass.Complement.complementOuts();
-                default -> throw new AssertionError();
+                default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
         }
@@ -92,7 +92,7 @@ public class Main {
                 case 3 -> SecondClass.ActivityThree.comparations();
                 case 4 -> SecondClass.ComplementOne.AgeVerification();
                 case 5 -> SecondClass.ComplementTwo.rectangle();
-                default -> throw new AssertionError();
+                default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
         }
@@ -106,7 +106,7 @@ public class Main {
             switch (option) {
                 case 1 -> ThirdActivity_IntegrativeActivity.ActivityOne.evenOrOdd();
                 case 2 -> ThirdActivity_IntegrativeActivity.ActivityTwo.calculator();
-                default -> throw new AssertionError();
+                default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
         }
@@ -126,7 +126,7 @@ public class Main {
                 case 6 -> ArrayClass.ComplementOne.pairElements();
                 case 7 -> ArrayClass.ComplementTwo.pairIndex();
                 case 8 -> ArrayClass.ComplementThree.alfabetic();
-                default -> throw new AssertionError();
+                default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
         }
@@ -147,7 +147,7 @@ public class Main {
                 case 7 -> ClassEleven.ComplementOne.invertArray();
                 case 8 -> ClassEleven.ComplementTwo.sumArray();
                 case 9 -> ClassEleven.ComplementThree.searchLetter();
-                default -> throw new AssertionError();
+                default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
         }
