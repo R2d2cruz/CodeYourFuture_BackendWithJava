@@ -18,6 +18,9 @@ public class Main {
                 case 2 -> {
                     secondClass();
                 }
+                case 3 -> {
+                    thirdClass();
+                }
                 case 10 -> {
                     arrayClass();
                 }
@@ -35,6 +38,7 @@ public class Main {
         System.out.println("Menu de clases, seleccione una: ");
         System.out.println("1. Clase Uno");
         System.out.println("2. Clase Dos");
+        System.out.println("3. Clase Tres");
         System.out.println("10. Clase diez");
         System.out.println("11. Clase Once");
         System.out.println("0. Salir");
@@ -95,6 +99,28 @@ public class Main {
         }
     }
 
+
+    public static void thirdClass() {
+        clearTerminal();
+        System.out.println("Que actividad quiere ejecutar: ");
+        System.out.println("1. Actividad uno");
+        System.out.println("2. Actividad dos");
+        System.out.println("0. Ninguna.");
+        int option = inputInt(2, "Ingrese que actividad desea: ");
+        if (option == 0) {
+            System.out.println("Entendido, regresando al menu...");
+        } else {
+            switch (option) {
+                case 1 -> ThirdActivity_IntegrativeActivity.ActivityOne.evenOrOdd(scanner);
+                case 2 -> ThirdActivity_IntegrativeActivity.ActivityTwo.calculator(scanner);
+                default -> throw new AssertionError();
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+            waitEnter();
+        }
+    }
+          
+          
     public static void secondClass() {
         clearTerminal();
         System.out.println("Que actividad quiere ejecutar: ");
