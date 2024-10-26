@@ -77,17 +77,33 @@ public class Main {
         scanner.nextLine();
     }
 
-    public static void firstClass() {
+    public static int menuActivities(int nActivities, int nComplement, String classNumber) {
+        String[] labelNumber = {"uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez"};
         clearTerminal();
-        System.out.println("Que actividad quiere ejecutar: ");
-        System.out.println("1. Actividad uno");
-        System.out.println("2. Actividad dos");
-        System.out.println("3. Actividad complementaria");
-        System.out.println("0. Ninguna.");
-        int option = inputInt(3, "Ingrese que actividad desea: ");
+        System.out.println("Que actividad de la clase " + classNumber + " quiere ejecutar: ");
+        int i = 0;
+
+        for (; i < nActivities; i++) {
+            System.out.println((i + 1) + ". Actividad " + labelNumber[i]);
+        }
+
+        for (i = 0; i < nComplement; i++) {
+            System.out.println((nActivities + i) + ". Actividad complementaria " + labelNumber[i]);
+        }
+        System.out.println("0. Ninguna."); 
+        
+        int option = inputInt(nActivities + nComplement, "Ingrese que actividad desea: ");
         if (option == 0) {
             System.out.println("Entendido, regresando al menu...");
         } else {
+            clearTerminal();
+        }
+        return option;
+    }
+
+    public static void firstClass() {
+        int option = menuActivities(2, 1,"uno");
+        if (option != 0) {
             switch (option) {
                 case 1 -> FirstClass.ActivityOne.printHelloWorld();
                 case 2 -> FirstClass.ActivityTwo.dataType();
@@ -95,45 +111,14 @@ public class Main {
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
-            waitEnter();
         }
-    }
-
-
-    public static void thirdClass() {
-        clearTerminal();
-        System.out.println("Que actividad quiere ejecutar: ");
-        System.out.println("1. Actividad uno");
-        System.out.println("2. Actividad dos");
-        System.out.println("0. Ninguna.");
-        int option = inputInt(2, "Ingrese que actividad desea: ");
-        if (option == 0) {
-            System.out.println("Entendido, regresando al menu...");
-        } else {
-            switch (option) {
-                case 1 -> ThirdActivity_IntegrativeActivity.ActivityOne.evenOrOdd(scanner);
-                case 2 -> ThirdActivity_IntegrativeActivity.ActivityTwo.calculator(scanner);
-                default -> throw new AssertionError();
-            }
-            System.out.println("Funcion finalizada, volviendo al menu...");
-            waitEnter();
-        }
+        waitEnter();
     }
           
           
     public static void secondClass() {
-        clearTerminal();
-        System.out.println("Que actividad quiere ejecutar: ");
-        System.out.println("1. Actividad uno");
-        System.out.println("2. Actividad dos");
-        System.out.println("3. Actividad tres");
-        System.out.println("4. Actividad complementaria uno");
-        System.out.println("5. Actividad complementaria dos");
-        System.out.println("0. Ninguna.");
-        int option = inputInt(3, "Ingrese que actividad desea: ");
-        if (option == 0) {
-            System.out.println("Entendido, regresando al menu...");
-        } else {
+        int option = menuActivities(3, 2,"dos");
+        if (option != 0) {
             switch (option) {
                 case 1 -> SecondClass.ActivityOne.scannerFunction(scanner);
                 case 2 -> SecondClass.ActivityTwo.calculator(scanner);
@@ -143,27 +128,28 @@ public class Main {
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
-            waitEnter();
         }
+        waitEnter();
+    }
+
+
+    public static void thirdClass() {
+        int option = menuActivities(2, 0,"tres");
+        if (option != 0) {
+            switch (option) {
+                case 1 -> ThirdActivity_IntegrativeActivity.ActivityOne.evenOrOdd(scanner);
+                case 2 -> ThirdActivity_IntegrativeActivity.ActivityTwo.calculator(scanner);
+                default -> throw new AssertionError();
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+        }
+        waitEnter();
     }
   
   
     public static void arrayClass() {
-        clearTerminal();
-        System.out.println("Que actividad quiere ejecutar: ");
-        System.out.println("1. Actividad uno");
-        System.out.println("2. Actividad dos");
-        System.out.println("3. Actividad tres");
-        System.out.println("4. Actividad cuatro");
-        System.out.println("5. Actividad cinco");
-        System.out.println("6. Actividad complementaria uno");
-        System.out.println("7. Actividad complementaria dos");
-        System.out.println("8. Actividad complementaria tres");
-        System.out.println("0. Ninguna.");
-        int option = inputInt(8, "Ingrese que actividad desea: ");
-        if (option == 0) {
-            System.out.println("Entendido, regresando al menu...");
-        } else {
+        int option = menuActivities(5, 3,"diez");
+        if (option != 0) {
             switch (option) {
                 case 1 -> ArrayClass.ActivityOne.printSumList(scanner);
                 case 2 -> ArrayClass.ActivityTwo.average(scanner);
@@ -176,28 +162,14 @@ public class Main {
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
-            waitEnter();
         }
+        waitEnter();
     }
                 
 
     public static void elevenClass() {
-        clearTerminal();
-        System.out.println("Que actividad quiere ejecutar: ");
-        System.out.println("1. Actividad uno");
-        System.out.println("2. Actividad dos");
-        System.out.println("3. Actividad tres");
-        System.out.println("4. Actividad cuatro");
-        System.out.println("5. Actividad cinco");
-        System.out.println("6. Actividad seis");
-        System.out.println("7. Actividad complementaria uno");
-        System.out.println("8. Actividad complementaria dos");
-        System.out.println("9. Actividad complementaria tres");
-        System.out.println("0. Ninguna.");
-        int option = inputInt(9, "Ingrese que actividad desea: ");
-        if (option == 0) {
-            System.out.println("Entendido, regresando al menu...");
-        } else {
+        int option = menuActivities(6, 3,"diez");
+        if (option != 0) {
             switch (option) {
                 case 1 -> ClassEleven.ActivityOne.printArrayLn();
                 case 2 -> ClassEleven.ActivityTwo.minVal();
@@ -211,7 +183,7 @@ public class Main {
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
-            waitEnter();
         }
+        waitEnter();
     }
 }
