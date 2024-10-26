@@ -99,6 +99,7 @@ public class Main {
         } else {
             switch (option) {
                 case 1 -> ThirdActivity_IntegrativeActivity.ActivityOne.evenOrOdd(scanner);
+                case 2 -> ThirdActivity_IntegrativeActivity.ActivityTwo.calculator(scanner);
                 default -> throw new AssertionError();
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
