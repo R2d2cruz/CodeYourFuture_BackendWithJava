@@ -60,13 +60,22 @@ public class TerminalFunctions {
 
     /**
      * Prompts the user to enter a string of text.
+     * In case of invalid input, displays an error message and requests new input.
      * @param message The message displayed to the user before input.
      * @return String the user's input as a string.
      */
     public static String inputString(String message) {
-        System.out.println(message);
-        String outString = scanner.nextLine();
-        return outString;
+        String outString;
+        boolean isNotValid;
+        do {
+            System.out.print(message);
+            outString = scanner.nextLine();
+            isNotValid = outString.trim().isEmpty();
+            if (isNotValid) {
+                System.out.println("Entrada no válida. Por favor, introduce un texto.");
+            }
+        } while (isNotValid);
+        return outString.trim();
     }
 
     /**
