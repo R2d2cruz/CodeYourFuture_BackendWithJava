@@ -1,4 +1,4 @@
-package SecondClass;
+package ClassTwo;
 
 import Utils.TerminalFunctions;
 

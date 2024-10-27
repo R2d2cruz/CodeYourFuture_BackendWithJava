@@ -1,4 +1,4 @@
-package ArrayClass;
+package ClassTen;
 
 import Utils.TerminalFunctions;
 

@@ -1,4 +1,4 @@
-package ThirdActivity_IntegrativeActivity;
+package ClassThree;
 
 import Utils.TerminalFunctions;
 

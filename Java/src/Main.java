@@ -13,19 +13,19 @@ public class Main {
                     inLoop = false;
                 }
                 case 1 -> {
-                    firstClass();
+                    classOne();
                 }
                 case 2 -> {
-                    secondClass();
+                    classTwo();
                 }
                 case 3 -> {
-                    thirdClass();
+                    classThree();
                 }
                 case 10 -> {
-                    arrayClass();
+                    classTen();
                 }
                 case 11 -> {
-                    elevenClass();
+                    classEleven();
                 }
                 default -> throw new AssertionError("How did we get here?");
             }
@@ -68,13 +68,13 @@ public class Main {
         return option;
     }
 
-    public static void firstClass() {
+    public static void classOne() {
         int option = menuActivities(2, 1,"uno");
         if (option != 0) {
             switch (option) {
-                case 1 -> FirstClass.ActivityOne.printHelloWorld();
-                case 2 -> FirstClass.ActivityTwo.dataType();
-                case 3 -> FirstClass.Complement.complementOuts();
+                case 1 -> ClassOne.ActivityOne.printHelloWorld();
+                case 2 -> ClassOne.ActivityTwo.dataType();
+                case 3 -> ClassOne.Complement.complementOuts();
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
@@ -83,15 +83,15 @@ public class Main {
     }
           
           
-    public static void secondClass() {
+    public static void classTwo() {
         int option = menuActivities(3, 2,"dos");
         if (option != 0) {
             switch (option) {
-                case 1 -> SecondClass.ActivityOne.scannerFunction();
-                case 2 -> SecondClass.ActivityTwo.calculator();
-                case 3 -> SecondClass.ActivityThree.comparations();
-                case 4 -> SecondClass.ComplementOne.AgeVerification();
-                case 5 -> SecondClass.ComplementTwo.rectangle();
+                case 1 -> ClassTwo.ActivityOne.scannerFunction();
+                case 2 -> ClassTwo.ActivityTwo.calculator();
+                case 3 -> ClassTwo.ActivityThree.comparations();
+                case 4 -> ClassTwo.ComplementOne.AgeVerification();
+                case 5 -> ClassTwo.ComplementTwo.rectangle();
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
@@ -100,12 +100,12 @@ public class Main {
     }
 
 
-    public static void thirdClass() {
+    public static void classThree() {
         int option = menuActivities(2, 0,"tres");
         if (option != 0) {
             switch (option) {
-                case 1 -> ThirdActivity_IntegrativeActivity.ActivityOne.evenOrOdd();
-                case 2 -> ThirdActivity_IntegrativeActivity.ActivityTwo.calculator();
+                case 1 -> ClassThree.ActivityOne.evenOrOdd();
+                case 2 -> ClassThree.ActivityTwo.calculator();
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
@@ -114,18 +114,18 @@ public class Main {
     }
   
   
-    public static void arrayClass() {
+    public static void classTen() {
         int option = menuActivities(5, 3,"diez");
         if (option != 0) {
             switch (option) {
-                case 1 -> ArrayClass.ActivityOne.printSumList();
-                case 2 -> ArrayClass.ActivityTwo.average();
-                case 3 -> ArrayClass.ActivityThree.maxValue();
-                case 4 -> ArrayClass.ActivityFour.arrayInts();
-                case 5 -> ArrayClass.ActivityFive.copingInArray();
-                case 6 -> ArrayClass.ComplementOne.pairElements();
-                case 7 -> ArrayClass.ComplementTwo.pairIndex();
-                case 8 -> ArrayClass.ComplementThree.alfabetic();
+                case 1 -> ClassTen.ActivityOne.printSumList();
+                case 2 -> ClassTen.ActivityTwo.average();
+                case 3 -> ClassTen.ActivityThree.maxValue();
+                case 4 -> ClassTen.ActivityFour.arrayInts();
+                case 5 -> ClassTen.ActivityFive.copingInArray();
+                case 6 -> ClassTen.ComplementOne.pairElements();
+                case 7 -> ClassTen.ComplementTwo.pairIndex();
+                case 8 -> ClassTen.ComplementThree.alfabetic();
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
@@ -134,7 +134,7 @@ public class Main {
     }
                 
 
-    public static void elevenClass() {
+    public static void classEleven() {
         int option = menuActivities(6, 3,"diez");
         if (option != 0) {
             switch (option) {
