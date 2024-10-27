@@ -1,4 +1,4 @@
-package ArrayClass;
+package ClassTen;
 
 /*
  * The {@code ActivityTwo} class contain method related to the activity:

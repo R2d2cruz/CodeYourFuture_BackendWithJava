@@ -1,6 +1,6 @@
-package SecondClass;
+package ClassTwo;
 
-import java.util.Scanner;
+import Utils.TerminalFunctions;
 
 /*
  * The {@code ActivityTwo} class contain method related to the activity:
@@ -14,18 +14,16 @@ import java.util.Scanner;
  */
 
 public class ActivityTwo {
-    public static void calculator(Scanner scanner){
-        System.out.print("Ingrese a: ");
-        double a = scanner.nextDouble();
-        System.out.print("Ingrese b: ");
-        double b = scanner.nextDouble();
+    public static void calculator(){
+        double a = TerminalFunctions.inputDouble("Ingrese a: ");
+        double b = TerminalFunctions.inputDouble("Ingrese b: ");
         System.out.println("1. a + b");
         System.out.println("2. a - b");
         System.out.println("3. a * b");
         System.out.println("4. a / b");
         System.out.println("5. a % b");
-        System.out.print("Ingrese operacion que desea realizar: ");
-        int operation = scanner.nextInt();
+        // Debido a que lo importante es realizar operaciones, dejamos al usuario elegir la operacion a realizar
+        int operation = TerminalFunctions.inputInt("Ingrese operacion que desea realizar: ");
         switch (operation) {
             case 1 -> System.out.println(a + " + " + b + " = " + (a + b));
             case 2 -> System.out.println(a + " - " + b + " = " + (a - b));

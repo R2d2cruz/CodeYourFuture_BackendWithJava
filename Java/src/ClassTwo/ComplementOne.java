@@ -1,6 +1,6 @@
-package SecondClass;
+package ClassTwo;
 
-import java.util.Scanner;
+import Utils.TerminalFunctions;
 
 /*
  * The {@code ComplementOne} class contain method related to the activity:
@@ -13,10 +13,9 @@ import java.util.Scanner;
  */
 
 public class ComplementOne {
-    public static void AgeVerification(Scanner scanner) {
+    public static void AgeVerification() {
         final int ACTUALYEAR = 2024;
-        System.out.print("Ingrese año de nacimiento: ");
-        int birthYear = scanner.nextInt();
+        int birthYear = TerminalFunctions.inputInt("Ingrese año de nacimiento: ");
         int age = ACTUALYEAR - birthYear;
         System.out.println("La persona es mayor de edad? " + (age >= 18));
     }

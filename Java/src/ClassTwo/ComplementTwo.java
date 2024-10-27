@@ -1,6 +1,6 @@
-package SecondClass;
+package ClassTwo;
 
-import java.util.Scanner;
+import Utils.TerminalFunctions;
 
 /*
  * The {@code ComplementTwo} class contain method related to the activity:
@@ -13,12 +13,10 @@ import java.util.Scanner;
  */
 
 public class ComplementTwo {
-    public static void rectangle(Scanner scanner) {
+    public static void rectangle() {
         double base, altura, perimetro, area;
-        System.out.println("Ingrese base:");
-        base = scanner.nextDouble();
-        System.out.println("Ingrese altura:");
-        altura = scanner.nextDouble();
+        base = TerminalFunctions.inputDouble("Ingrese base:");
+        altura = TerminalFunctions.inputDouble("Ingrese altura:");
 
         perimetro = 2 * base + 2 * altura;
 

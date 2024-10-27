@@ -1,6 +1,6 @@
-package SecondClass;
+package ClassTwo;
 
-import java.util.Scanner;
+import Utils.TerminalFunctions;
 
 /*
  * The {@code ActivityTwo} class contain method related to the activity:
@@ -13,11 +13,12 @@ import java.util.Scanner;
  */
 
 public class ActivityOne {
-    public static void scannerFunction(Scanner scanner){
+    public static void scannerFunction(){
         System.out.println("Ingrese su nombre: ");
-        String name = scanner.next();
+        String name = TerminalFunctions.getScanner().nextLine();
         System.out.println("Ingrese su edad: ");
-        int age = scanner.nextInt();
+        int age = TerminalFunctions.getScanner().nextInt();
+        TerminalFunctions.getScanner().nextLine();
         System.out.println("Su nombres es " + name + " y su edad es " + age);
     }
 }

@@ -1,4 +1,4 @@
-package FirstClass;
+package ClassOne;
 
 /*
  * The {@code ActivityTwo} class contain method related to the activity:

@@ -7,10 +7,8 @@ package ClassEleven;
  * e imprime el resultado por consola.
  */
 
-import java.util.Scanner;
-
 public class ActivitySix {
-    public static void concatenateStrings(Scanner scanner) {
+    public static void concatenateStrings() {
         String[] arrChar = { "hola", "Bienvenido", "a", "mi", "codigo" };
 
         String sentence = "";
