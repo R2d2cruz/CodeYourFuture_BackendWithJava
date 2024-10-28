@@ -33,6 +33,9 @@ public class Main {
                 case 7 -> {
                     classSeven();
                 }
+                case 8 -> {
+                    classEight();
+                }
                 case 10 -> {
                     classTen();
                 }
@@ -55,6 +58,7 @@ public class Main {
         System.out.println("5. Clase Cinco");
         System.out.println("6. Clase Seis");
         System.out.println("7. Clase Siete");
+        System.out.println("8. Clase Ocho");
         System.out.println("10. Clase diez");
         System.out.println("11. Clase Once");
         System.out.println("0. Salir");
@@ -193,6 +197,24 @@ public class Main {
                 case 7 -> ClassSeven.ComplementTwo.trimString();
                 case 8 -> ClassSeven.ComplementThree.compareString();
                 case 9 -> ClassSeven.ComplementFour.countingChars();
+                default -> throw new AssertionError("How did we get here?");
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+        }
+        TerminalFunctions.waitEnter();        
+    }
+
+    public static void classEight() {
+        int option = menuActivities(5, 2,"siete");
+        if (option != 0) {
+            switch (option) {
+                case 1 -> ClassEight.ActivityOne.absInt();
+                case 2 -> ClassEight.ActivityTwo.rounding();
+                case 3 -> ClassEight.ActivityThree.random();
+                case 4 -> ClassEight.ActivityFour.powNumbers();
+                case 5 -> ClassEight.ActivityFive.sqrtnumbers();
+                case 6 -> ClassEight.ComplementOne.randomRange();
+                case 7 -> ClassEight.ComplementTwo.primeNumber();
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
