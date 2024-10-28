@@ -21,6 +21,24 @@ public class Main {
                 case 3 -> {
                     classThree();
                 }
+                case 4 -> {
+                    classFour();
+                }
+                case 5 -> {
+                    classFive();
+                }
+                case 6 -> {
+                    classSix();
+                }
+                case 7 -> {
+                    classSeven();
+                }
+                case 8 -> {
+                    classEight();
+                }
+                case 9 -> {
+                    classNine();
+                }
                 case 10 -> {
                     classTen();
                 }
@@ -39,6 +57,12 @@ public class Main {
         System.out.println("1. Clase Uno");
         System.out.println("2. Clase Dos");
         System.out.println("3. Clase Tres");
+        System.out.println("4. Clase Cuatro");
+        System.out.println("5. Clase Cinco");
+        System.out.println("6. Clase Seis");
+        System.out.println("7. Clase Siete");
+        System.out.println("8. Clase Ocho");
+        System.out.println("9. Clase Nueve");
         System.out.println("10. Clase diez");
         System.out.println("11. Clase Once");
         System.out.println("0. Salir");
@@ -55,7 +79,7 @@ public class Main {
         }
 
         for (i = 0; i < nComplement; i++) {
-            System.out.println((nActivities + i) + ". Actividad complementaria " + labelNumber[i]);
+            System.out.println((nActivities + i + 1) + ". Actividad complementaria " + labelNumber[i]);
         }
         System.out.println("0. Ninguna."); 
         
@@ -111,6 +135,108 @@ public class Main {
             System.out.println("Funcion finalizada, volviendo al menu...");
         }
         TerminalFunctions.waitEnter();
+    }
+          
+          
+    public static void classFour() {
+        int option = menuActivities(3, 3,"cuatro");
+        if (option != 0) {
+            switch (option) {
+                case 1 -> ClassFour.ActivityOne.determineNumber();
+                case 2 -> ClassFour.ActivityTwo.rating();
+                case 3 -> ClassFour.ActivityThree.divisible35();
+                case 4 -> ClassFour.ComplementOne.security();
+                case 5 -> ClassFour.ComplementTwo.discount();
+                case 6 -> ClassFour.ComplementThree.ageVerification();
+                default -> throw new AssertionError("How did we get here?");
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+        }
+        TerminalFunctions.waitEnter();
+    }
+
+
+    public static void classFive() {
+        int option = menuActivities(4, 2,"cinco");
+        if (option != 0) {
+            switch (option) {
+                case 1 -> ClassFive.ActivityOne.weekDay();
+                case 2 -> ClassFive.ActivityTwo.rating();
+                case 3 -> ClassFive.ActivityThree.pauseMenu();
+                case 4 -> ClassFive.ActivityFour.figuresAreas();
+                case 5 -> ClassFive.ComplementOne.workingDay();
+                case 6 -> ClassFive.ComplementTwo.areaPer();
+                default -> throw new AssertionError("How did we get here?");
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+        }
+        TerminalFunctions.waitEnter();
+    }
+
+
+    public static void classSix() {
+        int option = menuActivities(3, 0,"cinco");
+        if (option != 0) {
+            switch (option) {
+                case 1 -> ClassSix.ActivityOne.division();
+                case 2 -> ClassSix.ActivityTwo.inputTry();
+                case 3 -> ClassSix.ActivityThree.intToString();
+                default -> throw new AssertionError("How did we get here?");
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+        }
+        TerminalFunctions.waitEnter();
+    }
+
+    public static void classSeven() {
+        int option = menuActivities(5, 4,"siete");
+        if (option != 0) {
+            switch (option) {
+                case 1 -> ClassSeven.ActivityOne.stringLength();
+                case 2 -> ClassSeven.ActivityTwo.concatName();
+                case 3 -> ClassSeven.ActivityThree.cutString();
+                case 4 -> ClassSeven.ActivityFour.searchChar();
+                case 5 -> ClassSeven.ActivityFive.upToDown();
+                case 6 -> ClassSeven.ComplementOne.changeChar();
+                case 7 -> ClassSeven.ComplementTwo.trimString();
+                case 8 -> ClassSeven.ComplementThree.compareString();
+                case 9 -> ClassSeven.ComplementFour.countingChars();
+                default -> throw new AssertionError("How did we get here?");
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+        }
+        TerminalFunctions.waitEnter();        
+    }
+
+    public static void classEight() {
+        int option = menuActivities(5, 2,"siete");
+        if (option != 0) {
+            switch (option) {
+                case 1 -> ClassEight.ActivityOne.absInt();
+                case 2 -> ClassEight.ActivityTwo.rounding();
+                case 3 -> ClassEight.ActivityThree.random();
+                case 4 -> ClassEight.ActivityFour.powNumbers();
+                case 5 -> ClassEight.ActivityFive.sqrtnumbers();
+                case 6 -> ClassEight.ComplementOne.randomRange();
+                case 7 -> ClassEight.ComplementTwo.primeNumber();
+                default -> throw new AssertionError("How did we get here?");
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+        }
+        TerminalFunctions.waitEnter();        
+    }
+
+    public static void classNine() {
+        int option = menuActivities(2, 0,"siete");
+        if (option != 0) {
+            switch (option) {
+                case 1 -> ClassNine.ActivityOne.tempConvertion();
+                case 2 -> ClassNine.ActivityTwo.securityVerification();
+                default -> throw new AssertionError("How did we get here?");
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+        }
+        TerminalFunctions.waitEnter();        
     }
   
   
