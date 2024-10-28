@@ -123,6 +123,7 @@ public class Main {
         if (option != 0) {
             switch (option) {
                 case 1 -> ClassFour.ActivityOne.determineNumber();
+                case 2 -> ClassFour.ActivityTwo.rating();
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
