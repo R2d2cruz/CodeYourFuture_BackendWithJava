@@ -127,6 +127,7 @@ public class Main {
                 case 3 -> ClassFour.ActivityThree.divisible35();
                 case 4 -> ClassFour.ComplementOne.security();
                 case 5 -> ClassFour.ComplementTwo.discount();
+                case 6 -> ClassFour.ComplementThree.ageVerification();
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
