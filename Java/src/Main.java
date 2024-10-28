@@ -55,7 +55,7 @@ public class Main {
         }
 
         for (i = 0; i < nComplement; i++) {
-            System.out.println((nActivities + i) + ". Actividad complementaria " + labelNumber[i]);
+            System.out.println((nActivities + i + 1) + ". Actividad complementaria " + labelNumber[i]);
         }
         System.out.println("0. Ninguna."); 
         
