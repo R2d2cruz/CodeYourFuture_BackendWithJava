@@ -27,6 +27,9 @@ public class Main {
                 case 5 -> {
                     classFive();
                 }
+                case 6 -> {
+                    classSix();
+                }
                 case 10 -> {
                     classTen();
                 }
@@ -47,6 +50,7 @@ public class Main {
         System.out.println("3. Clase Tres");
         System.out.println("4. Clase Cuatro");
         System.out.println("5. Clase Cinco");
+        System.out.println("6. Clase Seis");
         System.out.println("10. Clase diez");
         System.out.println("11. Clase Once");
         System.out.println("0. Salir");
@@ -150,6 +154,21 @@ public class Main {
                 case 4 -> ClassFive.ActivityFour.figuresAreas();
                 case 5 -> ClassFive.ComplementOne.workingDay();
                 case 6 -> ClassFive.ComplementTwo.areaPer();
+                default -> throw new AssertionError("How did we get here?");
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+        }
+        TerminalFunctions.waitEnter();
+    }
+
+
+    public static void classSix() {
+        int option = menuActivities(3, 0,"cinco");
+        if (option != 0) {
+            switch (option) {
+                case 1 -> ClassSix.ActivityOne.division();
+                case 2 -> ClassSix.ActivityTwo.inputTry();
+                case 3 -> ClassSix.ActivityThree.intToString();
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
