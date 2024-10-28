@@ -122,6 +122,7 @@ public class Main {
         int option = menuActivities(3, 3,"cuatro");
         if (option != 0) {
             switch (option) {
+                case 1 -> ClassFour.ActivityOne.determineNumber();
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
