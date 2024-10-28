@@ -125,6 +125,7 @@ public class Main {
                 case 1 -> ClassFour.ActivityOne.determineNumber();
                 case 2 -> ClassFour.ActivityTwo.rating();
                 case 3 -> ClassFour.ActivityThree.divisible35();
+                case 4 -> ClassFour.ComplementOne.security();
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
