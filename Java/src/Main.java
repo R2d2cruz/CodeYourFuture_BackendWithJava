@@ -21,6 +21,9 @@ public class Main {
                 case 3 -> {
                     classThree();
                 }
+                case 4 -> {
+                    classFour();
+                }
                 case 10 -> {
                     classTen();
                 }
@@ -39,6 +42,7 @@ public class Main {
         System.out.println("1. Clase Uno");
         System.out.println("2. Clase Dos");
         System.out.println("3. Clase Tres");
+        System.out.println("4. Clase Cuatro");
         System.out.println("10. Clase diez");
         System.out.println("11. Clase Once");
         System.out.println("0. Salir");
@@ -106,6 +110,18 @@ public class Main {
             switch (option) {
                 case 1 -> ClassThree.ActivityOne.evenOrOdd();
                 case 2 -> ClassThree.ActivityTwo.calculator();
+                default -> throw new AssertionError("How did we get here?");
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+        }
+        TerminalFunctions.waitEnter();
+    }
+          
+          
+    public static void classFour() {
+        int option = menuActivities(3, 3,"cuatro");
+        if (option != 0) {
+            switch (option) {
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
