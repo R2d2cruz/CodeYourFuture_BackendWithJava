@@ -291,6 +291,7 @@ public class Main {
                 case 1 -> ClassFifteen.ActivityOne.passwordGenerator();
                 case 2 -> ClassFifteen.ActivityTwo.rating();
                 case 3 -> ClassFifteen.ActivityThree.fibonaci();
+                case 4 -> ClassFifteen.ActivityFour.isPrime();
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
