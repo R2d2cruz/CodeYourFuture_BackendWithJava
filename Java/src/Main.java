@@ -290,6 +290,7 @@ public class Main {
             switch (option) {
                 case 1 -> ClassFifteen.ActivityOne.passwordGenerator();
                 case 2 -> ClassFifteen.ActivityTwo.rating();
+                case 3 -> ClassFifteen.ActivityThree.fibonaci();
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
