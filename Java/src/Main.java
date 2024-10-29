@@ -288,6 +288,7 @@ public class Main {
         int option = menuActivities(4, 0,"quince");
         if (option != 0) {
             switch (option) {
+                case 1 -> ClassFifteen.ActivityOne.passwordGenerator();
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
