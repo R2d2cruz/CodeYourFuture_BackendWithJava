@@ -7,7 +7,7 @@ public class Main {
         boolean inLoop = true;
         do {
             menu();
-            switch (TerminalFunctions.inputInt(11, "Ingrese la opcion que prefiere: ")) {
+            switch (TerminalFunctions.inputInt(15, "Ingrese la opcion que prefiere: ")) {
                 case 0 -> {
                     System.out.println("Muchas gracias, que tenga buen dia.");
                     inLoop = false;
@@ -44,6 +44,9 @@ public class Main {
                 }
                 case 11 -> {
                     classEleven();
+                }
+                case 15 -> {
+                    classFifteen();
                 }
                 default -> throw new AssertionError("How did we get here?");
             }
@@ -273,6 +276,22 @@ public class Main {
                 case 7 -> ClassEleven.ComplementOne.invertArray();
                 case 8 -> ClassEleven.ComplementTwo.sumArray();
                 case 9 -> ClassEleven.ComplementThree.searchLetter();
+                default -> throw new AssertionError("How did we get here?");
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+        }
+        TerminalFunctions.waitEnter();
+    }
+                
+
+    public static void classFifteen() {
+        int option = menuActivities(4, 0,"quince");
+        if (option != 0) {
+            switch (option) {
+                case 1 -> ClassFifteen.ActivityOne.passwordGenerator();
+                case 2 -> ClassFifteen.ActivityTwo.rating();
+                case 3 -> ClassFifteen.ActivityThree.fibonaci();
+                case 4 -> ClassFifteen.ActivityFour.isPrime();
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
