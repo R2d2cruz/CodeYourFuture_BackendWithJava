@@ -7,7 +7,7 @@ public class Main {
         boolean inLoop = true;
         do {
             menu();
-            switch (TerminalFunctions.inputInt(15, "Ingrese la opcion que prefiere: ")) {
+            switch (TerminalFunctions.inputInt(16, "Ingrese la opcion que prefiere: ")) {
                 case 0 -> {
                     System.out.println("Muchas gracias, que tenga buen dia.");
                     inLoop = false;
@@ -48,6 +48,9 @@ public class Main {
                 case 15 -> {
                     classFifteen();
                 }
+                case 16 -> {
+                    classSixteen();
+                }
                 default -> throw new AssertionError("How did we get here?");
             }
         } while (inLoop);
@@ -68,6 +71,8 @@ public class Main {
         System.out.println("9. Clase Nueve");
         System.out.println("10. Clase diez");
         System.out.println("11. Clase Once");
+        System.out.println("15. Clase Quince");
+        System.out.println("16. Clase Dieciseis");
         System.out.println("0. Salir");
     }
 
@@ -292,6 +297,23 @@ public class Main {
                 case 2 -> ClassFifteen.ActivityTwo.rating();
                 case 3 -> ClassFifteen.ActivityThree.fibonaci();
                 case 4 -> ClassFifteen.ActivityFour.isPrime();
+                default -> throw new AssertionError("How did we get here?");
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+        }
+        TerminalFunctions.waitEnter();
+    }
+                
+
+    public static void classSixteen() {
+        int option = menuActivities(5, 0,"dieciseis");
+        if (option != 0) {
+            switch (option) {
+                case 1 -> ClassSixteen.ActivityOne.factorial();
+                case 2 -> ClassSixteen.ActivityTwo.searchFibonaci();
+                case 3 -> ClassSixteen.ActivityThree.primo();
+                case 4 -> ClassSixteen.ActivityFour.printSquare();
+                case 5 -> ClassSixteen.ActivityFive.dots();
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
