@@ -7,7 +7,7 @@ public class Main {
         boolean inLoop = true;
         do {
             menu();
-            switch (TerminalFunctions.inputInt(16, "Ingrese la opcion que prefiere: ")) {
+            switch (TerminalFunctions.inputInt(17, "Ingrese la opcion que prefiere: ")) {
                 case 0 -> {
                     System.out.println("Muchas gracias, que tenga buen dia.");
                     inLoop = false;
@@ -54,6 +54,9 @@ public class Main {
                 case 16 -> {
                     classSixteen();
                 }
+                case 17 -> {
+                    classSeventeen();
+                }
                 default -> throw new AssertionError("How did we get here?");
             }
         } while (inLoop);
@@ -74,8 +77,10 @@ public class Main {
         System.out.println("9. Clase Nueve");
         System.out.println("10. Clase diez");
         System.out.println("11. Clase Once");
+        System.out.println("13. Clase Trece");
         System.out.println("15. Clase Quince");
         System.out.println("16. Clase Dieciseis");
+        System.out.println("17. Clase Diecisiete");
         System.out.println("0. Salir");
     }
 
@@ -325,6 +330,18 @@ public class Main {
                 case 3 -> ClassSixteen.ActivityThree.primo();
                 case 4 -> ClassSixteen.ActivityFour.printSquare();
                 case 5 -> ClassSixteen.ActivityFive.dots();
+                default -> throw new AssertionError("How did we get here?");
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+        }
+        TerminalFunctions.waitEnter();
+    }
+
+    public static void classSeventeen() {
+        int option = menuActivities(1, 0, "diecisiete");
+        if (option != 0) {
+            switch (option) {
+                case 1 -> ClassSeventeen.ActivityOne.controlSentences();
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
