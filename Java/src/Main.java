@@ -45,6 +45,9 @@ public class Main {
                 case 11 -> {
                     classEleven();
                 }
+                case 13 -> {
+                    classThirteen();
+                }
                 case 15 -> {
                     classFifteen();
                 }
@@ -77,7 +80,7 @@ public class Main {
     }
 
     public static int menuActivities(int nActivities, int nComplement, String classNumber) {
-        String[] labelNumber = {"uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez"};
+        String[] labelNumber = { "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez" };
         TerminalFunctions.clearTerminal();
         System.out.println("Que actividad de la clase " + classNumber + " quiere ejecutar: ");
         int i = 0;
@@ -89,8 +92,8 @@ public class Main {
         for (i = 0; i < nComplement; i++) {
             System.out.println((nActivities + i + 1) + ". Actividad complementaria " + labelNumber[i]);
         }
-        System.out.println("0. Ninguna."); 
-        
+        System.out.println("0. Ninguna.");
+
         int option = TerminalFunctions.inputInt(nActivities + nComplement, "Ingrese que actividad desea: ");
         if (option == 0) {
             System.out.println("Entendido, regresando al menu...");
@@ -101,7 +104,7 @@ public class Main {
     }
 
     public static void classOne() {
-        int option = menuActivities(2, 1,"uno");
+        int option = menuActivities(2, 1, "uno");
         if (option != 0) {
             switch (option) {
                 case 1 -> ClassOne.ActivityOne.printHelloWorld();
@@ -113,10 +116,9 @@ public class Main {
         }
         TerminalFunctions.waitEnter();
     }
-          
-          
+
     public static void classTwo() {
-        int option = menuActivities(3, 2,"dos");
+        int option = menuActivities(3, 2, "dos");
         if (option != 0) {
             switch (option) {
                 case 1 -> ClassTwo.ActivityOne.scannerFunction();
@@ -131,9 +133,8 @@ public class Main {
         TerminalFunctions.waitEnter();
     }
 
-
     public static void classThree() {
-        int option = menuActivities(2, 0,"tres");
+        int option = menuActivities(2, 0, "tres");
         if (option != 0) {
             switch (option) {
                 case 1 -> ClassThree.ActivityOne.evenOrOdd();
@@ -144,10 +145,9 @@ public class Main {
         }
         TerminalFunctions.waitEnter();
     }
-          
-          
+
     public static void classFour() {
-        int option = menuActivities(3, 3,"cuatro");
+        int option = menuActivities(3, 3, "cuatro");
         if (option != 0) {
             switch (option) {
                 case 1 -> ClassFour.ActivityOne.determineNumber();
@@ -163,9 +163,8 @@ public class Main {
         TerminalFunctions.waitEnter();
     }
 
-
     public static void classFive() {
-        int option = menuActivities(4, 2,"cinco");
+        int option = menuActivities(4, 2, "cinco");
         if (option != 0) {
             switch (option) {
                 case 1 -> ClassFive.ActivityOne.weekDay();
@@ -181,9 +180,8 @@ public class Main {
         TerminalFunctions.waitEnter();
     }
 
-
     public static void classSix() {
-        int option = menuActivities(3, 0,"cinco");
+        int option = menuActivities(3, 0, "cinco");
         if (option != 0) {
             switch (option) {
                 case 1 -> ClassSix.ActivityOne.division();
@@ -197,7 +195,7 @@ public class Main {
     }
 
     public static void classSeven() {
-        int option = menuActivities(5, 4,"siete");
+        int option = menuActivities(5, 4, "siete");
         if (option != 0) {
             switch (option) {
                 case 1 -> ClassSeven.ActivityOne.stringLength();
@@ -213,11 +211,11 @@ public class Main {
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
         }
-        TerminalFunctions.waitEnter();        
+        TerminalFunctions.waitEnter();
     }
 
     public static void classEight() {
-        int option = menuActivities(5, 2,"siete");
+        int option = menuActivities(5, 2, "siete");
         if (option != 0) {
             switch (option) {
                 case 1 -> ClassEight.ActivityOne.absInt();
@@ -231,11 +229,11 @@ public class Main {
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
         }
-        TerminalFunctions.waitEnter();        
+        TerminalFunctions.waitEnter();
     }
 
     public static void classNine() {
-        int option = menuActivities(2, 0,"siete");
+        int option = menuActivities(2, 0, "siete");
         if (option != 0) {
             switch (option) {
                 case 1 -> ClassNine.ActivityOne.tempConvertion();
@@ -244,12 +242,11 @@ public class Main {
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
         }
-        TerminalFunctions.waitEnter();        
+        TerminalFunctions.waitEnter();
     }
-  
-  
+
     public static void classTen() {
-        int option = menuActivities(5, 3,"diez");
+        int option = menuActivities(5, 3, "diez");
         if (option != 0) {
             switch (option) {
                 case 1 -> ClassTen.ActivityOne.printSumList();
@@ -266,10 +263,9 @@ public class Main {
         }
         TerminalFunctions.waitEnter();
     }
-                
 
     public static void classEleven() {
-        int option = menuActivities(6, 3,"diez");
+        int option = menuActivities(6, 3, "diez");
         if (option != 0) {
             switch (option) {
                 case 1 -> ClassEleven.ActivityOne.printArrayLn();
@@ -287,10 +283,26 @@ public class Main {
         }
         TerminalFunctions.waitEnter();
     }
-                
+
+    public static void classThirteen() {
+        int option = menuActivities(5, 1, "trece");
+        if (option != 0) {
+            switch (option) {
+                case 1 -> ClassThirteen.ActivityOne.sortingReverse();
+                case 2 -> ClassThirteen.ActivityTwo.searchRandom();
+                case 3 -> ClassThirteen.ActivityThree.arrayCompare();
+                case 4 -> ClassThirteen.ActivityFour.arrayChange();
+                case 5 -> ClassThirteen.ActivityFive.fillingArray();
+                case 6 -> ClassThirteen.ComplementOne.fillingPersonalized();
+                default -> throw new AssertionError("How did we get here?");
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+        }
+        TerminalFunctions.waitEnter();
+    }
 
     public static void classFifteen() {
-        int option = menuActivities(4, 0,"quince");
+        int option = menuActivities(4, 0, "quince");
         if (option != 0) {
             switch (option) {
                 case 1 -> ClassFifteen.ActivityOne.passwordGenerator();
@@ -303,10 +315,9 @@ public class Main {
         }
         TerminalFunctions.waitEnter();
     }
-                
 
     public static void classSixteen() {
-        int option = menuActivities(5, 0,"dieciseis");
+        int option = menuActivities(5, 0, "dieciseis");
         if (option != 0) {
             switch (option) {
                 case 1 -> ClassSixteen.ActivityOne.factorial();
