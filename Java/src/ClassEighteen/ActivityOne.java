@@ -222,7 +222,6 @@ public class ActivityOne {
                 case 7 -> System.out.println("Que tenga buen dia :)");
                 default -> System.out.println("Opcion no valida.");
             }
-            System.out.println("Presione enter para continuar...");
             TerminalFunctions.waitEnter();
 
         } while (opcion != 7);
