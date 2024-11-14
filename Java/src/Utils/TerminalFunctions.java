@@ -49,7 +49,7 @@ public class TerminalFunctions {
      * Uses the Scanner to read the newline and pause execution momentarily.
      */
     public static void waitEnter() {
-        System.out.println("Press Enter to continue...");
+        System.out.println("Presione enter para continuar...");
         scanner.nextLine();
     }
 
@@ -89,7 +89,7 @@ public class TerminalFunctions {
      * @return char The first character entered by the user.
      */
     public static char inputChar(String message) {
-        return (inputString(message, "Please enter a single character")).toCharArray()[0];
+        return (inputString(message, "Por favor ingrese un caracter.")).toCharArray()[0];
     }
 
     /**
@@ -101,7 +101,7 @@ public class TerminalFunctions {
      * @return String The user's input as a trimmed string.
      */
     public static String inputString(String message) {
-        return inputString(message, "Invalid input. Please enter text.");
+        return inputString(message, "Entrada invalida, por favor ingrese texto.");
     }
 
     /**
@@ -192,7 +192,6 @@ public class TerminalFunctions {
         return inputDouble(0, maxValue, message, errorMessage);
     }
 
-
     /**
      * Prompts the user to enter an double within a minimum and maximum range, with
      * error
@@ -220,6 +219,87 @@ public class TerminalFunctions {
                 }
             } catch (Exception e) {
                 System.out.println("Entrada invalida. Intente nuevamente.");
+                scanner.nextLine(); // Clears the buffer in case of error
+            }
+        } while (isNotValid);
+        return val;
+    }
+
+    /**
+     * Prompts the user to enter a positive decimal number.
+     * In case of invalid input or a negative number, an error message is displayed
+     * and the input is requested again.
+     * 
+     * @param message The message displayed to the user before prompting for input.
+     * @return double The positive decimal number entered by the user.
+     */
+    public static double inputPositiveDouble(String message) {
+        return inputPositiveDouble(message, "Numero invalido. Por favor, vuelva a intentar...");
+    }
+
+    /**
+     * Prompts the user to enter a positive decimal number.
+     * In case of invalid input or a negative number, an error message is displayed
+     * and the input is requested again.
+     * 
+     * @param message      The message displayed to the user before prompting for
+     *                     input.
+     * @param errorMessage The message displayed when the input is invalid.
+     * @return double The positive decimal number entered by the user.
+     */
+    public static double inputPositiveDouble(String message, String errorMessage) {
+        double val = 0;
+        boolean isNotValid = false;
+        do {
+            System.out.print(message);
+            try {
+                val = scanner.nextDouble();
+                scanner.nextLine(); // Consumes the newline character
+                isNotValid = val < 0;
+                if (isNotValid) {
+                    System.out.println(errorMessage);
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid input. Please try again.");
+                scanner.nextLine(); // Clears the buffer in case of error
+            }
+        } while (isNotValid);
+        return val;
+    }
+
+    /**
+     * Prompts the user to enter a natural number (non-negative integer).
+     * In case of invalid input, an error message is displayed and the input is
+     * requested again.
+     * 
+     * @param message The message displayed to the user before prompting for input.
+     * @return int The natural number (non-negative integer) entered by the user.
+     */
+    public static int inputNatural(String message) {
+        return inputNatural(message, "Numero invalido. Por favor, vuelva a intentar...");
+    }
+
+    /**
+     * Prompts the user to enter a natural number (non-negative integer).
+     * In case of invalid input, the provided error message is displayed and the
+     * input is requested again.
+     * 
+     * @param message      The message displayed to the user before prompting for
+     *                     input.
+     * @param errorMessage The message displayed when the input is invalid.
+     * @return int The natural number (non-negative integer) entered by the user.
+     */
+    public static int inputNatural(String message, String errorMessage) {
+        int val = 0;
+        boolean isNotValid = true;
+        do {
+            System.out.print(message);
+            try {
+                val = scanner.nextInt();
+                scanner.nextLine(); // Consumes the newline character
+                isNotValid = val < 0; // Ensures the number is non-negative
+            } catch (Exception e) {
+                System.out.println(errorMessage);
                 scanner.nextLine(); // Clears the buffer in case of error
             }
         } while (isNotValid);
