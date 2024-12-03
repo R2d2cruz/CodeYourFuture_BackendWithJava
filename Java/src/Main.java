@@ -60,6 +60,9 @@ public class Main {
                 case 18 -> {
                     classEighteen();
                 }
+                case 19 -> {
+                    classEighteen();
+                }
                 default -> throw new AssertionError("How did we get here?");
             }
         } while (inLoop);
@@ -85,6 +88,7 @@ public class Main {
         System.out.println("16. Clase Dieciseis");
         System.out.println("17. Clase Diecisiete");
         System.out.println("18. Clase Dieciocho");
+        System.out.println("19. Clase Diecinueve");
         System.out.println("0. Salir");
     }
 
@@ -358,6 +362,22 @@ public class Main {
         if (option != 0) {
             switch (option) {
                 case 1 -> ClassEighteen.ActivityOne.schoolScores();
+                default -> throw new AssertionError("How did we get here?");
+            }
+            System.out.println("Funcion finalizada, volviendo al menu...");
+        }
+        TerminalFunctions.waitEnter();
+    }
+
+    public static void classNineteen() {
+        int option = menuActivities(3, 1, "diecinueve");
+        if (option != 0) {
+            switch (option) {
+                case 1 -> ClassNineteen.ActivityOne.funtionsActivity();
+                case 2 -> ClassNineteen.ActivityTwo.funtionsActivity();
+                case 3 -> ClassNineteen.ActivityThree.funtionsActivity();
+                case 4 -> ClassNineteen.ComplementOne.tablaDeMultiplicar();
+                case 5 -> ClassNineteen.ComplementTwo.multiplicationTable();
                 default -> throw new AssertionError("How did we get here?");
             }
             System.out.println("Funcion finalizada, volviendo al menu...");
