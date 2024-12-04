@@ -1,7 +1,14 @@
 package ClassTwentyOne;
 
+/*
+ * The {@code ActivityTwo} class contain method related to the activity:
+ * Crea un método llamado "factorial()" que tome un parámetro de tipo "int" 
+ * y devuelva un valor entero que corresponda al cálculo del factorial del número proporcionado. 
+ * Posteriormente, intenta modificar la lógica para resolverlo de manera recursiva.
+ */
+
 public class ActivityTwo {
-    public static void main(String[] args) {
+    public static void factorialWithRecursivity() {
         int n = 3;
         System.out.println("Factorial normal: " + factorial(n));
         System.out.println("Factorial recursivo: " + factorialRecursiva(n));

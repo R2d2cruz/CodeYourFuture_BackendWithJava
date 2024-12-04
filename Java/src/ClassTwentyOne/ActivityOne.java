@@ -1,9 +1,15 @@
 package ClassTwentyOne;
 
+/*
+ * The {@code ActivityOne} class contain method related to the activity:
+ * Reorganiza el código extrayendo la lógica en métodos sin alterar su funcionamiento. 
+ * Después, intenta modificar la lógica para resolverlo de forma recursiva. 
+ */
+
 import Utils.TerminalFunctions;
 
 public class ActivityOne {
-    public static void fibonaci(String[] args) {
+    public static void fibonaci() {
         int search = TerminalFunctions.inputInt("Ingrese que posicion de fibonacci busca: ");
         System.out.println("Por medio de la funcion da: " + fibonaciSimple(search));
         System.out.println("Por medio de la funcion da: " + fibonaciRecursive(search));
