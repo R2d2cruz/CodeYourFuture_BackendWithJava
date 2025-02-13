@@ -1,15 +1,16 @@
 package com.egg;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
+import com.egg.servicios.GamaServicio;
 
 
 public class Application {
 
 
-public static void main(String[] args) {
- EntityManagerFactory emf = Persistence.createEntityManagerFactory("ViveroPU");
-        EntityManager em = emf.createEntityManager();
+    public static void main(String[] args) {
+        GamaServicio gamaServicio = new GamaServicio();
+
+        System.out.println(gamaServicio.buscarGamaProducto(2).getDescripcionTexto());
+
+
     }
 }
