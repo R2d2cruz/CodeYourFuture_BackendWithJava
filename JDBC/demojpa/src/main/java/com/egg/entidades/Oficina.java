@@ -23,7 +23,7 @@ public class Oficina {
     private String codigoPostal;
 
     @Column(name = "codigo_oficina", length = 10)
-    private String codigodOficina;
+    private String codigoOficina;
 
         @Column(name = "pais", length = 50)
     private String pais;
@@ -46,12 +46,12 @@ public class Oficina {
         this.idOficina = idOficina;
     }
 
-    public String getCodigodOficina() {
-        return codigodOficina;
+    public String getCodigoOficina() {
+        return codigoOficina;
     }
 
-    public void setCodigodOficina(String codigodOficina) {
-        this.codigodOficina = codigodOficina;
+    public void setCodigoOficina(String codigoOficina) {
+        this.codigoOficina = codigoOficina;
     }
 
     public String getCiudad() {

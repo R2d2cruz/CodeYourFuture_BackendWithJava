@@ -2,25 +2,29 @@ package com.egg.persistencia;
 
 import java.util.List;
 
-import com.egg.entidades.Oficina;
+import com.egg.entidades.Producto;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-public class OficinaDAO {
+public class ProductoDAO {
+
 
     private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("ViveroPU");
     private final EntityManager em = emf.createEntityManager();
 
-    public void guardaOficina(Oficina oficina) throws Exception {
+
+    public void guardarCliente(Producto producto) throws Exception {
         em.getTransaction().begin();
-        em.persist(oficina);
+        em.persist(producto);
         em.getTransaction().commit();
     }
 
-    public List<Oficina> listarTodas() throws Exception {
-        return em.createQuery("SELECT o FROM Oficina o", Oficina.class)
+    public List<Producto> listarTodosClientes() throws Exception {
+        return em.createQuery("SELECT p FROM Producto p", Producto.class)
                 .getResultList();
     }
+    
+    
 }
