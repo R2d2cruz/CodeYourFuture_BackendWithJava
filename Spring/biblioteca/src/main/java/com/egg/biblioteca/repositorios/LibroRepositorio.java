@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.egg.biblioteca.entidades.Libro;
 
 @Repository
-public interface LiborRepositorio extends JpaRepository<Libro, String> {
+public interface LibroRepositorio extends JpaRepository<Libro, Long> {
 
     @Query("SELECT l FROM Libro l WHERE l.titulo = :titulo")
     public Libro buscarPorTitulo(@Param("titulo") String titulo);
