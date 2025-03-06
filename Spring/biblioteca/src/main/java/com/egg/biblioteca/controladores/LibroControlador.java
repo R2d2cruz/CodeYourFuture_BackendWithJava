@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -79,6 +80,45 @@ public class LibroControlador {
         }
 
         return "redirect:/libro/lista"; // Redirige a la página donde se lista los libros
+    }
+
+    @GetMapping("/modificar/{isbn}")
+    public String modificar(@PathVariable Long isbn, ModelMap modelo) {
+        // Obtener el libro por ISBN
+        Libro libro = libroServicio.getOne(isbn);
+        modelo.put("libro", libro);
+
+        // Obtener la lista de autores y editoriales
+        List<Autor> autores = autorServicio.listarAutores();
+        List<Editorial> editoriales = editorialServicio.listarEditoriales();
+
+        modelo.addAttribute("autores", autores);
+        modelo.addAttribute("editoriales", editoriales);
+
+        // Retornar la vista
+        return "libro_modificar.html";
+    }
+
+    @PostMapping("/{isbn}")
+    public String modificar(@PathVariable Long isbn,
+            @RequestParam String titulo,
+            @RequestParam int ejemplares,
+            @RequestParam String idAutor,
+            @RequestParam String idEditorial,
+            ModelMap modelo) {
+        try {
+            // Guardar los cambios en la base de datos
+            libroServicio.modificarLibro(isbn, titulo, ejemplares, UUID.fromString(idAutor),
+                    UUID.fromString(idEditorial));
+
+            // Redirigir a la lista de libros después de modificar
+            return "redirect:/libro/lista";
+        } catch (MiException ex) {
+            // En caso de error, se agrega el mensaje de error y se vuelve a la página de
+            // modificar libro
+            modelo.put("error", ex.getMessage());
+            return "libro_modificar.html"; // Volver a la página de modificación
+        }
     }
 
     // Método para verificar si una cadena es un UUID válido

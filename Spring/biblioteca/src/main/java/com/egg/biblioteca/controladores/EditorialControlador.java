@@ -1,6 +1,7 @@
 package com.egg.biblioteca.controladores;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -46,8 +48,50 @@ public class EditorialControlador {
             modelo.put("error", ex.getMessage());
             return "editorial_form.html";
         }
-        return "index.html";
+        return "editorial_list.html";
 
+    }
+
+    @GetMapping("/modificar/{id}")
+    public String modificar(@PathVariable String id, ModelMap modelo) {
+        if (!esUUIDValido(id)) {
+            modelo.put("error", "El ID de la editorial no es un UUID válido.");
+            return "redirect:/editorial/lista"; // Volver a mostrar el formulario
+        }
+
+        modelo.put("editorial", editorialServicio.getOne(UUID.fromString(id)));
+
+
+        return "editorial_modificar.html";
+    }
+
+
+    @PostMapping("/{id}")
+    public String modificar(@PathVariable String id, @RequestParam String nombre, ModelMap modelo) {
+        if (!esUUIDValido(id)) {
+            modelo.put("error", "El ID de la editorial no es un UUID válido.");
+            return "redirect:/editorial/lista"; // Volver a mostrar el formulario
+        }
+        System.out.println(nombre + " " + id);
+        try {
+            editorialServicio.modificarEditorial(nombre, UUID.fromString(id));
+
+
+            return "redirect:/editorial/lista";
+        } catch (MiException ex) {
+            modelo.put("error", ex.getMessage());
+            return "editorial_modificar.html";
+        }
+    }
+
+    // Método para verificar si una cadena es un UUID válido
+    private boolean esUUIDValido(String id) {
+        try {
+            UUID.fromString(id);
+            return true; // Es un UUID válido
+        } catch (IllegalArgumentException e) {
+            return false; // No es un UUID válido
+        }
     }
 
 }

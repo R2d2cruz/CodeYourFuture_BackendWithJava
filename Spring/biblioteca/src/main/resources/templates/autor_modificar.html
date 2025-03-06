@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Modificar Autor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/formulario.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navBar">
+        <div class="containerImg">
+            <a href="/" class="navbar-brand d-flex align-items-center">
+                <img class="logo" src="/img/Egg.png" alt="Img logo egg">
+            </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse elementosNav" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto elementos">
+                <!-- Menú de navegación para Libros, Autores, y Editoriales (sin cambios) -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mensajes de error o éxito -->
+    <div th:if="${error != null}" class="card text-white bg-danger mb-3 mensajeError">
+        <div class="card-body">
+            <h5 class="card-title">Error 👎</h5>
+            <p class="card-text" th:text="${error}"></p>
+        </div>
+    </div>
+    <div th:if="${exito != null}" class="card text-white bg-success mb-3 mt-3 mensajeExito">
+        <div class="card-body">
+            <h5 class="card-title">¡Éxito!</h5>
+            <p class="card-text" th:text="${exito}"></p>
+        </div>
+    </div>
+
+    <div class="container-fluid m-5 contenedor">
+        <form class="formulario" th:action="@{/autor/{id}(id=${autor.id})}" method="POST">
+            <div class="form-group my-3">
+                <label class="mb-2">Nombre del Autor</label>
+                <!-- Si 'autor' está presente, usamos su nombre, sino el campo estará vacío -->
+                <input type="text" class="form-control" name="nombre" th:value="${autor != null ? autor.nombre : ''}"
+                    placeholder="Nombre del Autor">
+            </div>
+
+            <!-- Campo oculto para el ID del autor -->
+            <input type="hidden" name="id" th:value="${autor != null ? autor.id : ''}">
+
+            <button type="submit" class="btn btn-primary mt-3 botones">Guardar</button>
+        </form>
+
+        <section class="text-center container">
+            <div class="row mt-3">
+                <div class="divVolver">
+                    <a th:href="@{/}" class="btn btn-secondary my-2 botonVolver botones">Volver</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="text-muted py-5">
+        <div class="containerFooter">
+            <p class="mb-1">Este es un ejemplo de Bootstrap. Personaliza el diseño a tu gusto.</p>
+            <p class="mb-0">¿Nuevo en Bootstrap? <a href="/"><br>Visita la página principal</a> o lee nuestra <a
+                    href="../getting-started/introduction/">guía de introducción</a>.</p>
+            <p class="float-end mb-1">
+                <a href="#" style="text-decoration:none"><span>⬆️</span> Volver arriba</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
