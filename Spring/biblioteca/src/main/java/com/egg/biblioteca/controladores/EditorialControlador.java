@@ -1,5 +1,6 @@
 package com.egg.biblioteca.controladores;
 
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,6 +26,14 @@ public class EditorialControlador {
     @GetMapping("/registrar") // localhost:8080/editorial/registrar
     public String registrar() {
         return "editorial_form.html";
+    }
+
+    @GetMapping("/lista")
+    public String listar(ModelMap modelo) {
+
+        List<Editorial> editoriales = editorialServicio.listarEditoriales();
+        modelo.addAttribute("editoriales", editoriales);
+        return "editorial_list.html";
     }
 
     @PostMapping("/registro")

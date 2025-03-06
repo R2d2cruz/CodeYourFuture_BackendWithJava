@@ -1,5 +1,6 @@
 package com.egg.biblioteca.controladores;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,14 @@ public class LibroControlador {
         model.addAttribute("autores", autores);
         model.addAttribute("editoriales", editoriales);
         return "libro_form.html";
+    }
+
+    @GetMapping("/lista")
+    public String listar(ModelMap modelo) {
+
+        List<Libro> libros = libroServicio.listarLibros();
+        modelo.addAttribute("libros", libros);
+        return "libro_list.html";
     }
 
     @PostMapping("/registro")
