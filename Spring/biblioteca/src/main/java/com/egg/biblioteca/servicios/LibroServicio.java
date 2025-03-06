@@ -79,6 +79,12 @@ public class LibroServicio {
         }
     }
 
+    @Transactional(readOnly = true)
+    public Libro getOne(Long isbn) {
+        return libroRepositorio.getReferenceById(isbn);
+    }
+
+
     private void validar(Long isbn, String titulo, Integer ejemplares, UUID idAutor, UUID idEditorial) throws MiException {
         if (isbn == null || isbn <= 0) {
             throw new MiException("El ISBN no puede ser nulo o menor o igual a cero");
