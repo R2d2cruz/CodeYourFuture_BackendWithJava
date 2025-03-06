@@ -4,11 +4,15 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.egg.biblioteca.entidades.Autor;
+import com.egg.biblioteca.entidades.Editorial;
+import com.egg.biblioteca.entidades.Libro;
 import com.egg.biblioteca.excepciones.MiException;
 import com.egg.biblioteca.servicios.AutorServicio;
 import com.egg.biblioteca.servicios.EditorialServicio;
@@ -26,21 +30,56 @@ public class LibroControlador {
     private EditorialServicio editorialServicio;
 
     @GetMapping("/registrar") // localhost:8080/libro/registrar
-    public String registrar() {
+    public String registrar(ModelMap model) {
+        List<Autor> autores = autorServicio.listarAutores();
+        List<Editorial> editoriales = editorialServicio.listarEditoriales();
+        model.addAttribute("autores", autores);
+        model.addAttribute("editoriales", editoriales);
         return "libro_form.html";
     }
 
     @PostMapping("/registro")
     public String registro(@RequestParam(required = false) Long isbn, @RequestParam String titulo,
             @RequestParam(required = false) Integer ejemplares, @RequestParam String idAutor,
-            @RequestParam String idEditorial) {
+            @RequestParam String idEditorial, ModelMap modelo) {
+        List<Autor> autores = autorServicio.listarAutores();
+        List<Editorial> editoriales = editorialServicio.listarEditoriales();
+        modelo.addAttribute("autores", autores);
+        modelo.addAttribute("editoriales", editoriales);
+
+        // Validación para idAutor
+        if (!esUUIDValido(idAutor)) {
+            modelo.put("error", "El ID del autor no es un UUID válido.");
+            return "libro_form.html"; // Volver a mostrar el formulario
+        }
+
+        // Validación para idEditorial
+        if (!esUUIDValido(idEditorial)) {
+            modelo.put("error", "El ID de la editorial no es un UUID válido.");
+            return "libro_form.html"; // Volver a mostrar el formulario
+        }
+
         try {
             libroServicio.crearLibro(isbn, titulo, ejemplares, UUID.fromString(idAutor), UUID.fromString(idEditorial));
-
+            modelo.put("exito", "El libro se guardo de forma exitosa");
         } catch (MiException ex) {
-
-            return "libro_form.html"; // volvemos a cargar el formulario.
+            // Logger.getLogger(LibroControlador.class.getName()).log(Level.SEVERE, null,
+            // ex);
+            modelo.put("error", ex.getMessage());
+            return "libro_form.html"; // Volver a mostrar el formulario
         }
-        return "index.html";
+
+        return "redirect:/libro/lista"; // Redirige a la página donde se lista los libros
     }
+
+    // Método para verificar si una cadena es un UUID válido
+    private boolean esUUIDValido(String id) {
+        try {
+            UUID.fromString(id);
+            return true; // Es un UUID válido
+        } catch (IllegalArgumentException e) {
+            return false; // No es un UUID válido
+        }
+    }
+
 }
