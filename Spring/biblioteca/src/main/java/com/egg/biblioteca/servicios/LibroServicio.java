@@ -30,7 +30,7 @@ public class LibroServicio {
     private EditorialRepositorio editorialRepositorio;
 
     @Transactional
-    public void crearLibro(Long isbn, String titulo, int ejemplares, UUID idAutor, UUID idEditorial) throws MiException{
+    public void crearLibro(Long isbn, String titulo, Integer ejemplares, UUID idAutor, UUID idEditorial) throws MiException{
         validar(isbn, titulo, ejemplares, idAutor, idEditorial);
         Editorial editorial = editorialRepositorio.findById(idEditorial).get();
         Autor autor = autorRepositorio.findById(idAutor).get();
@@ -79,14 +79,14 @@ public class LibroServicio {
         }
     }
 
-    private void validar(Long isbn, String titulo, int ejemplares, UUID idAutor, UUID idEditorial) throws MiException {
+    private void validar(Long isbn, String titulo, Integer ejemplares, UUID idAutor, UUID idEditorial) throws MiException {
         if (isbn == null || isbn <= 0) {
             throw new MiException("El ISBN no puede ser nulo o menor o igual a cero");
         }
         if (titulo == null || titulo.isEmpty()) {
             throw new MiException("El título no puede ser nulo o estar vacío");
         }
-        if (ejemplares <= 0) {
+        if (ejemplares == null || ejemplares <= 0) {
             throw new MiException("El número de ejemplares debe ser mayor que cero");
         }
         if (idAutor == null) {
