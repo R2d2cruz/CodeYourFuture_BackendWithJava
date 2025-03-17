@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.egg.biblioteca.entidades.Usuario;
+import com.egg.biblioteca.excepciones.MiException;
 import com.egg.biblioteca.servicios.ImagenServicio;
 import com.egg.biblioteca.servicios.UsuarioServicio;
 
@@ -47,7 +48,7 @@ public class ImagenControlador {
             return new ResponseEntity<>("Imagen actualizada exitosamente",
 
                     HttpStatus.OK);
-        } catch (Exception e) {
+        } catch (MiException e) {
             return new ResponseEntity<>("Error al actualizar la imagen",
 
                     HttpStatus.BAD_REQUEST);
