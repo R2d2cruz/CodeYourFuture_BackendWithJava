@@ -2,6 +2,8 @@ package com.egg.biblioteca.servicios;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -15,7 +17,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.egg.biblioteca.entidades.Imagen;
 import com.egg.biblioteca.entidades.Usuario;
 import com.egg.biblioteca.enumeraciones.Rol;
 import com.egg.biblioteca.excepciones.MiException;
@@ -28,8 +32,12 @@ public class UsuarioServicio implements UserDetailsService {
     @Autowired
     private UsuarioRepositorio usuarioRepositorio;
 
+    @Autowired
+    private ImagenServicio imagenServicio;
+
     @Transactional
-    public void registrarUsuario(String nombre, String email, String password, String password2) throws MiException {
+    public void registrarUsuario(MultipartFile archivo, String nombre, String email, String password, String password2)
+            throws MiException {
         validar(nombre, email, password, password2);
 
         Usuario usuario = new Usuario();
@@ -39,7 +47,38 @@ public class UsuarioServicio implements UserDetailsService {
         usuario.setPassword(new BCryptPasswordEncoder().encode(password));
         usuario.setRol(Rol.USER);
 
+        Imagen imagen = imagenServicio.guardarImagen(archivo);
+        usuario.setImagen(imagen);
         usuarioRepositorio.save(usuario);
+    }
+
+    @Transactional
+    public void actualizarUsuario(UUID id, MultipartFile archivo, String nombre, String email, String password,
+            String password2) throws MiException {
+        validar(nombre, email, password, password2);
+
+        Optional<Usuario> respuesta = usuarioRepositorio.findById(id);
+        if (respuesta.isPresent()) {
+            Usuario usuario = respuesta.get();
+            usuario.setNombre(nombre);
+            usuario.setEmail(email);
+
+            usuario.setPassword(new BCryptPasswordEncoder().encode(password));
+
+            UUID idImagen = null;
+            if (usuario.getImagen() != null) {
+                idImagen = usuario.getImagen().getId();
+            }
+            Imagen imagen = imagenServicio.modificarImagen(archivo, idImagen);
+            usuario.setImagen(imagen);
+
+            usuarioRepositorio.save(usuario);
+        }
+    }
+
+    @Transactional(readOnly = true)
+    public Usuario getOne(UUID id) {
+        return usuarioRepositorio.getReferenceById(id);
     }
 
     private void validar(String nombre, String email, String password, String password2) throws MiException {
@@ -76,7 +115,7 @@ public class UsuarioServicio implements UserDetailsService {
             HttpSession session = attr.getRequest().getSession(true);
 
             session.setAttribute("usuariosession", usuario);
-            
+
             return new User(usuario.getEmail(), usuario.getPassword(), permisos);
         } else {
             return null;

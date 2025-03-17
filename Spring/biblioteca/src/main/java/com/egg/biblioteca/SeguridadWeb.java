@@ -22,7 +22,7 @@ public class SeguridadWeb {
                                                 .requestMatchers("/libro/lista", "/autor/lista", "/editorial/lista")
                                                 .hasAnyRole("ADMIN", "USER")
                                                 .requestMatchers("/css/**", "/js/", "/img/**").permitAll()
-                                                .requestMatchers("/", "/login", "/registrar").permitAll() // Rutas accesibles
+                                                .requestMatchers("/", "/login", "/registrar", "/registro").permitAll() // Rutas accesibles
                                                                                                      // sin login
                                                 .anyRequest().authenticated())
                                 .formLogin((form) -> form

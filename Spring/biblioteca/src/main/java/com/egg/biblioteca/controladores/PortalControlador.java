@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.egg.biblioteca.entidades.Usuario;
 import com.egg.biblioteca.excepciones.MiException;
@@ -54,12 +55,13 @@ public class PortalControlador {
     @PostMapping("/registro")
     public String registro(@RequestParam("nombre") String nombre,
             @RequestParam("email") String email,
+            @RequestParam("archivo") MultipartFile archivo,
             @RequestParam("password") String password,
             @RequestParam("password2") String password2,
             ModelMap modelo) {
         try {
             // Intentar registrar al usuario utilizando el servicio
-            usuarioServicio.registrarUsuario(nombre, email, password, password2);
+            usuarioServicio.registrarUsuario(archivo, nombre, email, password, password2);
 
             // Si todo es correcto, redirigir a la vista index.html y pasar mensaje de éxito
             modelo.put("exito", "Tu usuario ha sido registrado con exito!");
